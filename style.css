@@ -1,0 +1,64 @@
+.navbar-custom {
+  background-color: #feede6ff;
+  border-bottom: 1px solid #d6d0c4;
+  color: #763a16ff;
+}
+
+/* Typography and link styling */
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: #763a16ff !important;
+  font-family: Georgia, serif;
+}
+
+.navbar-custom .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Search bar */
+.search-input {
+  border: 1px solid #d6d0c4;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+}
+
+/* Icon buttons */
+.icon-btn {
+  background-color: #763a16ff;
+  color: #feede6ff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin-left: 0.5rem;
+}
+
+.icon-btn:hover {
+  background-color: #c6bda8;
+  color: #763a16ff;
+}
+
+/* Profile image */
+.profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d6d0c4;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+/* Dropdown menu tweaks */
+.dropdown-menu {
+  font-family: Georgia, serif;
+}
+.dropdown-item:hover {
+  background-color: #f4f1ea;
+}
+
