@@ -1,10 +1,12 @@
+/* Goodreads-inspired color scheme */
 .navbar-custom {
   background-color: #feede6ff;
   border-bottom: 1px solid #d6d0c4;
   color: #763a16ff;
+  min-height: 70px; /* thicker navbar */
 }
 
-/* Typography and link styling */
+/* Text & brand styling */
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
   color: #763a16ff !important;
@@ -15,26 +17,27 @@
   text-decoration: underline;
 }
 
-/* Search bar */
+/* Search bar styling */
 .search-input {
   border: 1px solid #d6d0c4;
   border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
+  padding: 6px 10px;
+  font-size: 0.95rem;
 }
 
-/* Icon buttons */
+/* Icon button style */
 .icon-btn {
   background-color: #763a16ff;
   color: #feede6ff;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   margin-left: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .icon-btn:hover {
@@ -44,17 +47,32 @@
 
 /* Profile image */
 .profile-img {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid #d6d0c4;
-  margin-left: 0.5rem;
-  cursor: pointer;
   object-fit: cover;
   aspect-ratio: 1 / 1;
 }
 
-/* Dropdown menu tweaks */
+/* Remove Bootstrap button padding */
+.profile-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Keep icons side-by-side on small screens */
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Dropdown tweaks */
 .dropdown-menu {
   font-family: Georgia, serif;
 }
@@ -62,3 +80,7 @@
   background-color: #f4f1ea;
 }
 
+/* Optional: make brand font slightly larger for balance */
+.navbar-brand {
+  font-size: 1.6rem;
+}
