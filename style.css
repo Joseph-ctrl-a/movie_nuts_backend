@@ -1,12 +1,23 @@
-/* Goodreads-inspired color scheme */
+/* Body & Layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Navbar */
 .navbar-custom {
   background-color: #feede6ff;
   border-bottom: 1px solid #d6d0c4;
-  color: #763a16ff;
-  min-height: 70px; /* thicker navbar */
+  min-height: 70px;
 }
 
-/* Text & brand styling */
 .navbar-custom .nav-link,
 .navbar-custom .navbar-brand {
   color: #763a16ff !important;
@@ -17,7 +28,6 @@
   text-decoration: underline;
 }
 
-/* Search bar styling */
 .search-input {
   border: 1px solid #d6d0c4;
   border-radius: 4px;
@@ -25,7 +35,6 @@
   font-size: 0.95rem;
 }
 
-/* Icon button style */
 .icon-btn {
   background-color: #763a16ff;
   color: #feede6ff;
@@ -45,17 +54,15 @@
   color: #763a16ff;
 }
 
-/* Profile image */
 .profile-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1px solid #d6d0c4;
   object-fit: cover;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
 }
 
-/* Remove Bootstrap button padding */
 .profile-btn {
   background: transparent;
   border: none;
@@ -65,22 +72,156 @@
   align-items: center;
 }
 
-/* Keep icons side-by-side on small screens */
-.icon-group {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+/* Blog Cards */
+.blog-card {
+  border: 1px solid #d6d0c4;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #feede6ff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Dropdown tweaks */
-.dropdown-menu {
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #d6d0c4;
+}
+
+.blog-card .card-body h5 {
+  font-weight: bold;
+  color: #763a16ff;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card .card-text {
+  color: #5a3416;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+
+.blog-card .btn-primary {
+  background-color: #763a16ff;
+  border-color: #763a16ff;
+  color: #feede6ff;
   font-family: Georgia, serif;
 }
-.dropdown-item:hover {
-  background-color: #f4f1ea;
+
+.blog-card .btn-primary:hover {
+  background-color: #c6bda8;
+  border-color: #c6bda8;
+  color: #763a16ff;
 }
 
-/* Optional: make brand font slightly larger for balance */
-.navbar-brand {
-  font-size: 1.6rem;
+/* Swiper Coverflow */
+.coverflow-swiper {
+  width: 100%;
+  padding: 60px 0;
 }
+
+.coverflow-swiper .swiper-slide {
+  width: 220px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverflow-swiper .swiper-slide img {
+  width: 220px;
+  height: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.coverflow-swiper .swiper-slide h5 {
+  margin-top: 10px;
+  color: #763a16ff;
+  font-family: Georgia, serif;
+}
+
+/* Swiper Coverflow */
+.coverflow-swiper {
+  width: 100%;
+  padding: 60px 0;
+}
+
+/* Swiper slides */
+.coverflow-swiper .swiper-slide {
+  width: 220px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swiper navigation buttons: brown background with light arrows */
+.coverflow-swiper {
+  position: relative;
+}
+
+.coverflow-swiper .swiper-button-next,
+.coverflow-swiper .swiper-button-prev {
+  background-color: #763a16ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.coverflow-swiper .swiper-button-prev {
+  left: calc(50% - 180px); /* adjust based on slide width */
+}
+
+.coverflow-swiper .swiper-button-next {
+  right: calc(50% - 180px); /* adjust based on slide width */
+}
+
+.coverflow-swiper .swiper-button-next::after,
+.coverflow-swiper .swiper-button-prev::after {
+  color: #feede6ff; /* arrow color same as footer text */
+  font-size: 20px;
+}
+
+.coverflow-swiper .swiper-button-next:hover,
+.coverflow-swiper .swiper-button-prev:hover {
+  background-color: #c6bda8;
+}
+
+/* Footer */
+.footer-custom {
+  background-color: #feede6ff;
+  border-top: 1px solid #d6d0c4;
+  width: 100%;
+  padding: 10px 0;
+  color: #763a16ff;
+}
+
+.footer-title {
+  font-size: 1.7rem;
+}
+
+.footer-link {
+  color: #763a16ff;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #d6d0c4;
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
