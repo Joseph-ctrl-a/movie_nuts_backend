@@ -1,0 +1,21 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #763a16ff; /* main brown */
+  --color-primary-light: #c6bda8; /* lighter hover color */
+  --color-accent: #feede6ff; /* cream accent */
+
+  /* Text Colors */
+  --color-text-dark: #4a2a16; /* deep brown */
+  --color-text-light: #feede6ff; /* cream */
+
+  /* Background Colors */
+  --color-bg: #fff7f2; /* very soft background */
+  --color-bg-alt: #f2e8df; /* subtle alternate */
+
+  /* Borders */
+  --color-border: #d6d0c4; /* light grey-beige border */
+
+  /* UI Elements */
+  --radius: 12px;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}

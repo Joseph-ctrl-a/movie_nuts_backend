@@ -1,0 +1,30 @@
+/* ---------------- */
+/* Footer Component */
+/* ---------------- */
+
+.footer-custom {
+  background-color: var(--color-text-light);
+  border-top: 1px solid var(--color-primary-light);
+  width: 100%;
+  padding: 10px 0;
+  color: var(--color-text-dark);
+}
+
+.footer-title {
+  font-size: 1.7rem;
+}
+
+.footer-link {
+  color: var(--color-text-dark);
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-accent);
+  margin-top: 0.25rem;
+  padding-top: 0.25rem;
+  font-size: 0.85rem;
+}

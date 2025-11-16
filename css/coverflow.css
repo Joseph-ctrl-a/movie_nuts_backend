@@ -1,0 +1,60 @@
+/* Swiper Coverflow Component  */
+
+.coverflow-swiper {
+  width: 100%;
+  padding: 60px 0;
+  position: relative;
+}
+
+/* Slides */
+.coverflow-swiper .swiper-slide {
+  width: 220px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverflow-swiper .swiper-slide img {
+  width: 220px;
+  height: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.coverflow-swiper .swiper-slide h5 {
+  margin-top: 10px;
+  color: var(--color-primary);
+  font-family: Georgia, serif;
+}
+
+/* Navigation Buttons */
+.coverflow-swiper .swiper-button-next,
+.coverflow-swiper .swiper-button-prev {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.coverflow-swiper .swiper-button-prev {
+  left: calc(50% - 180px);
+}
+
+.coverflow-swiper .swiper-button-next {
+  right: calc(50% - 180px);
+}
+
+.coverflow-swiper .swiper-button-next::after,
+.coverflow-swiper .swiper-button-prev::after {
+  color: var(--color-accent);
+  font-size: 20px;
+}
+
+.coverflow-swiper .swiper-button-next:hover,
+.coverflow-swiper .swiper-button-prev:hover {
+  background-color: var(--color-primary-light);
+}

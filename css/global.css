@@ -1,0 +1,12 @@
+/* Global Layout & Typography */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
