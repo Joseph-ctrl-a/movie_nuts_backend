@@ -1,10 +1,9 @@
 const express = require('express')
-const { User: userModel } = require('../db/models/user/userModel')
-const { user: userSchema } = require('../validators/userSchema')
-module.exports = (helpers, userSchema, userModel) => {
-  const { loginUser } = require('../controllers/login/login')
+module.exports = () => {
+  const { loginUser, registerUser } = require('../controllers/auth/auth')
 
   const router = express.Router()
-  router.post('/', loginUser)
+  router.post('/login', loginUser)
+  router.post('/register', registerUser)
   return router
 }

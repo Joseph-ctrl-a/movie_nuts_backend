@@ -27,5 +27,5 @@ const login = require('../routes/login')
  */
 module.exports = app => {
   const loginRouter = require('../routes/login')
-  app.use('/login', loginRouter())
+  app.use('/auth', loginRouter())
 }
