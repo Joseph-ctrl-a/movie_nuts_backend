@@ -5,9 +5,6 @@
  * Bootstraps the Express server, loads environment variables,
  * connects to MongoDB, initializes global middleware, and mounts routes.
  *
- * The project follows a modular architecture using dependency injection
- * and a centralized helper object (`helperObject`) for managing responses,
- * errors, middleware, and route creation.
  *
  * @module server
  */
