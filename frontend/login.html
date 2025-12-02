@@ -69,81 +69,103 @@
             </div>
         </div>
     </nav>
+    <div class="site-container">
+        <!-- LEFT SLIDESHOW BAR -->
+        <div class="slideshow-bar left">
+            <div id="slideshow-left">
+                <img src="Lost_in_Translation_poster.jpg">
+                <img src="magnolia.jpg">
+                <img src="the_shining.jpg">
+                <img src="Scott_Pilgrim_vs._the_World_teaser.jpg">
 
-    </div>
-    <div class="split-container">
+            </div>
+        </div>
 
-        <div class="half slideshow-half">
-            <div id="slideshow">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <a id="back" href="#">Go back</a>
+            <div class="wrapper">
+                <form action=""></form>
 
+                <div class="login-box">
+                    <h1>Login</h1>
+
+                    <div class="input-box">
+                        <input type="text" placeholder="Username">
+                        <i class='bx  bx-user'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Password">
+                        <i class="bx bx-lock"></i>
+                    </div>
+
+                    <div class="options">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn">Login</button>
+
+                    <p class="registertext">Don’t have an account? <a href="#">Register</a></p>
+                </div>
+                </form>
+            </div>
+
+
+
+        </div>
+
+        <!-- RIGHT SLIDESHOW BAR -->
+        <div class="slideshow-bar right">
+            <div id="slideshow-right">
                 <img src="superbad.jpg">
                 <img src="the_thing.jpg">
                 <img src="Fantastic_mr_fox.jpg">
                 <img src="dune.jpg">
                 <img src="dog_day_afternoon.jpg">
                 <img src="Chainsaw_Man_.jpg">
-                <img src="Lost_in_Translation_poster.jpg">
-                <img src="magnolia.jpg">
-                <img src="the_shining.jpg">
-                <img src="Scott_Pilgrim_vs._the_World_teaser.jpg">
-            </div>
-            <div class="hero-content">
-                <h1>Your Text</h1>
-                <p>Whatever you want on top of the background.</p>
             </div>
         </div>
-
-        <div class="half content-half">
-            <h2>Right Side Content</h2>
-            <p>Put whatever you want here.</p>
-        </div>
+    </div>
 
     </div>
 
-
-    <a id="back" href="#">Go back</a>
-    <div class="wrapper">
-        <form action=""></form>
-
-        <div class="login-box">
-            <h1>Login</h1>
-
-            <div class="input-box">
-                <input type="text" placeholder="Username">
-                <i class='bx  bx-user'></i>
-            </div>
-
-            <div class="input-box">
-                <input type="password" placeholder="Password">
-                <i class="bx bx-lock"></i>
-            </div>
-
-            <div class="options">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="#">Forgot Password?</a>
-            </div>
-
-            <button type="submit" class="btn">Login</button>
-
-            <p class="registertext">Don’t have an account? <a href="#">Register</a></p>
-        </div>
-        </form>
-    </div>
 
 
     <script>
         $(document).ready(function () {
-            let images = $('#slideshow img');
-            let index = 0;
+            function initSlideshow(slideshowId) {
+                const images = $(slideshowId + " img");
+                let index = 0;
 
-            images.eq(index).show();
+                images.hide().eq(index).show();
 
-            setInterval(function () {
-                images.eq(index).fadeOut(1000);
-                index = (index + 1) % images.length;
-                images.eq(index).fadeIn(1000);
-            }, 3000);
+                function slideImages() {
+                    const current = images.eq(index);
+                    index = (index + 1) % images.length;
+                    const next = images.eq(index);
+
+                    current.fadeOut(1000);
+                    next.fadeIn(1000);
+                }
+
+                // Start slideshow
+                let slideInterval = setInterval(slideImages, 4000);
+
+                // Pause on hover
+                $(slideshowId).hover(
+                    () => clearInterval(slideInterval),
+                    () => slideInterval = setInterval(slideImages, 4000)
+                );
+            }
+
+            initSlideshow("#slideshow-left");
+            initSlideshow("#slideshow-right");
+
         });
+
+
     </script>
 
 
