@@ -29,3 +29,10 @@ module.exports = app => {
   const loginRouter = require('../routes/login')
   app.use('/auth', loginRouter())
 }
+const moviesRouter = require('../routes/movies');
+const loginRouter = require('../routes/login');
+
+module.exports = app => {
+  app.use('/auth', loginRouter());
+  app.use('/api/movies', moviesRouter);
+};
