@@ -192,14 +192,14 @@ body {
 
 /* Full acorn */
 .acorn.full {
-  background-image: url('ratings/Full.png');
+  background-image: url('/ratings/Full.png');
 }
 /* Half acorn */
 .acorn.half {
-  background-image: url('ratings/half.png');
+  background-image: url('/ratings/half.png');
 }
 
 /* Empty acorn */
 .acorn.empty {
-  background-image: url('ratings/empty.png');
+  background-image: url('/ratings/empty.png');
 }
