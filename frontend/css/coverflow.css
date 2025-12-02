@@ -28,6 +28,66 @@
   color: var(--color-primary);
   font-family: Georgia, serif;
 }
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 20px 0 10px 10px;
+  color: #fff;  /* adjust based on theme */
+}
+
+.swiper-slide {
+  position: relative; /* allows badge to be positioned */
+}
+
+/* This wrapper becomes the new anchor point */
+.slide-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.coverflow-swiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Poster wrapper so the badge positions relative to the image */
+.film-card {
+  position: relative;
+  display: inline-block;
+}
+
+/* Just in case – keep poster sizing consistent */
+.film-poster {
+  display: block;
+}
+.rank-badge {
+  position: absolute;
+  top: 10px;        /* move up/down as needed */
+  left: 10px;       /* controls how far from the left edge of poster */
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;  /* make bigger/smaller */
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+/* Colours for each place */
+.rank-gold {
+  background: linear-gradient(135deg, #e6c200, #d4af37);
+}
+
+.rank-silver {
+  background: linear-gradient(135deg, #d7d7d7, #b0b0b0);
+}
+
+.rank-bronze {
+  background: linear-gradient(135deg, #d89b5a, #b87333);
+}
+
 
 /* Navigation Buttons */
 .coverflow-swiper .swiper-button-next,
