@@ -58,3 +58,87 @@
   display: flex;
   align-items: center;
 }
+
+/* Search dropdown */
+.search-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  background: white;
+  width: 280px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 0;
+  display: none; /* hidden until JS shows it */
+  z-index: 9999;
+}
+
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.search-dropdown-item img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.search-dropdown-item:hover {
+  background: #f0f0f0;
+}
+/* Ensure the navbar allows absolutely-positioned children to escape */
+.navbar {
+  overflow: visible !important;
+}
+
+/* Ensure the form expands enough to hold the dropdown */
+.navbar form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force dropdown to show on top of navbar & not be clipped */
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 320px;
+  max-height: 350px;
+  overflow-y: auto;
+  display: none; /* JS toggles this */
+  z-index: 999999 !important;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Items inside the dropdown */
+.search-item,
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.search-item img,
+.search-dropdown-item img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-item:hover,
+.search-dropdown-item:hover {
+  background: #f2f2f2;
+}
