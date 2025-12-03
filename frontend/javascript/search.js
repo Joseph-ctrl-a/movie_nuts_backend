@@ -4,11 +4,14 @@ const searchInput = document.getElementById("nav-search");
 const searchResults = document.getElementById("search-results");
 
 function clearResults() {
+  if (!searchResults) return;
   searchResults.innerHTML = "";
   searchResults.style.display = "none";
 }
 
 async function runSearch() {
+  if (!searchInput || !searchResults) return;
+
   const query = searchInput.value.trim();
 
   if (!query) {
@@ -36,37 +39,77 @@ async function runSearch() {
 }
 
 function renderSearchResults(movies) {
+  if (!searchResults) return;
+
   if (!movies || movies.length === 0) {
     clearResults();
     return;
   }
 
-  // Build the HTML for the top 5 results
-  searchResults.innerHTML = movies
-    .slice(0, 5)
-    .map(
-      (m) => `
-      <div class="search-dropdown-item">
-        <img src="https://image.tmdb.org/t/p/w92${m.posterPath}" alt="poster">
-        <span>${m.title}</span>
-      </div>
-    `
-    )
-    .join("");
+  // Clear existing results
+  searchResults.innerHTML = "";
+
+  // Only show top 5
+  movies.slice(0, 5).forEach((movie) => {
+    const item = document.createElement("div");
+    item.className = "search-dropdown-item";
+    item.setAttribute("role", "button");
+    item.setAttribute("tabindex", "0");
+
+    const posterPath = movie.posterPath || movie.poster_path || "";
+    const img = document.createElement("img");
+    img.src = posterPath
+      ? `https://image.tmdb.org/t/p/w92${posterPath}`
+      : "https://via.placeholder.com/92x138?text=No+Image";
+    img.alt = `Poster for ${movie.title || movie.name || "film"}`;
+
+    const titleSpan = document.createElement("span");
+    titleSpan.textContent = movie.title || movie.name || "Untitled film";
+
+    item.appendChild(img);
+    item.appendChild(titleSpan);
+
+    // When clicked: store movie and go to film.html
+    const goToFilm = () => {
+      try {
+        localStorage.setItem("selectedMovie", JSON.stringify(movie));
+      } catch (e) {
+        console.warn("Could not store movie in localStorage:", e);
+      }
+      window.location.href = "film.html";
+    };
+
+    item.addEventListener("click", goToFilm);
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        goToFilm();
+      }
+    });
+
+    searchResults.appendChild(item);
+  });
 
   // SHOW the dropdown
   searchResults.style.display = "block";
 }
 
 // Debounced input handler
-searchInput.addEventListener("input", () => {
-  clearTimeout(window.searchDebounce);
-  window.searchDebounce = setTimeout(runSearch, 300);
-});
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    clearTimeout(window.searchDebounce);
+    window.searchDebounce = setTimeout(runSearch, 300);
+  });
+}
 
 // Optional: hide results when clicking outside
 document.addEventListener("click", (e) => {
-  if (!searchResults.contains(e.target) && e.target !== searchInput) {
+  if (
+    searchResults &&
+    !searchResults.contains(e.target) &&
+    e.target !== searchInput
+  ) {
     clearResults();
   }
 });
+
