@@ -1,9 +1,7 @@
-// film.js — Final Complete Version
+// film.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  /* -----------------------------------------------------------
-     Element Cache
-  ----------------------------------------------------------- */
+  /*Element Cache*/
   const posterEl = document.getElementById("film-poster");
   const titleEl = document.getElementById("film-title");
   const releaseEl = document.getElementById("film-release-date");
@@ -16,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("blogs-prev");
   const nextBtn = document.getElementById("blogs-next");
 
-  /* -----------------------------------------------------------
-     Utility: Render Film Rating (Full-size acorns)
-  ----------------------------------------------------------- */
+  /*Utility: Render Film Rating (Full-size acorns)*/
   function renderAcornRating(container, score) {
     container.innerHTML = "";
 
@@ -48,9 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /* -----------------------------------------------------------
-     Utility: Render Mini Rating (Blog acorns)
-  ----------------------------------------------------------- */
+  /*Utility: Render Mini Rating (Blog acorns)*/
   function renderMiniAcornRating(score) {
     const container = document.createElement("div");
     container.className = "blog-acorn-rating";
@@ -82,9 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return container;
   }
 
-  /* -----------------------------------------------------------
-     Load Movie From localStorage
-  ----------------------------------------------------------- */
+  /*Load Movie From localStorage*/
   let movie = null;
   try {
     const stored = localStorage.getItem("selectedMovie");
@@ -98,9 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  /* -----------------------------------------------------------
-     Populate Film Details
-  ----------------------------------------------------------- */
+  /*Populate Film Details */
   const posterPath = movie.posterPath || movie.poster_path || "";
   posterEl.src = posterPath
     ? `https://image.tmdb.org/t/p/w780${posterPath}`
@@ -129,10 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const movieScore = movie.vote_average || movie.rating || 0;
   renderAcornRating(ratingEl, movieScore);
 
-  /* -----------------------------------------------------------
-     Placeholder Blog Data
-     (Now includes username, pfp, and rating)
-  ----------------------------------------------------------- */
+  /*Placeholder Blog Data*/
   let blogs = [
     {
       title: "Is this the most goated movie of all",
@@ -272,3 +259,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderBlogs();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("write-blog-for-this-film");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    const titleEl = document.getElementById("film-title");
+    const posterEl = document.getElementById("film-poster");
+
+    // If your film page URL is like film.html?id=123, grab that id:
+    const params = new URLSearchParams(window.location.search);
+    const filmId = params.get("id");
+
+    const filmPayload = {
+      id: filmId || null,
+      title: titleEl ? titleEl.textContent.trim() : "",
+      posterSrc: posterEl ? posterEl.src : ""
+    };
+
+    try {
+      localStorage.setItem(
+        "movieNuts:prefillFilm",
+        JSON.stringify(filmPayload)
+      );
+    } catch (e) {
+      console.error("Could not save prefill film", e);
+    }
+
+    // Go to the write-a-blog page
+    window.location.href = "write_blog.html";
+  });
+});
+
