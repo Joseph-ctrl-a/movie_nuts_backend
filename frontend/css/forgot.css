@@ -1,96 +1,324 @@
-.forgot-link {
-    color: #3498db;
-    cursor: pointer;
-    text-decoration: underline;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-.forgot-link:hover {
-    color: #1a73e8;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACF</title>
 
-/* Blur background */
-#blurWrapper.active {
-    filter: blur(8px);
-    pointer-events: none;
-}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-/* Popup wrapper */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-/* Popup content box */
-.popup-content {
-    background: #ffffff;
-    width: 350px;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    position: relative;
-    animation: fadeIn 0.3s ease;
-}
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="forgot.css">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="coverflow.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="Blogs.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-/* Slide-in animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+</head>
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom px-4 py-2">
+        <a class="navbar-brand fw-bold" href="#">ACF</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">My Reviews</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="browseDropdown" role="button"
+                        data-bs-toggle="dropdown">Browse</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Genres</a></li>
+                        <li><a class="dropdown-item" href="#">Top Rated</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Community</a></li>
+            </ul>
+            <form class="d-flex align-items-center me-3">
+                <input type="text" class="search-input" placeholder="Search films">
+            </form>
+            <div class="d-flex align-items-center icon-group">
+                <button class="icon-btn" title="Write a Review"><i class="bi bi-pencil"></i></button>
+                <button class="icon-btn" title="Notifications"><i class="bi bi-bell"></i></button>
+                <div class="dropdown">
+                    <button class="profile-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="profile-img">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">View Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Profile Settings</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="site-container">
 
-/* Close button */
-.close-popup,
-.close-code-popup {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 22px;
-    cursor: pointer;
-}
+        <div class="slideshow-bar left">
+            <div id="slideshow-left">
+                <img src="Lost_in_Translation_poster.jpg">
+                <img src="magnolia.jpg">
+                <img src="the_shining.jpg">
+                <img src="Scott_Pilgrim_vs._the_World_teaser.jpg">
 
-/* Inputs */
-.popup-content input {
-    width: 90%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
+            </div>
+        </div>
 
-/* Buttons */
-.popup-content button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    border: none;
-    background: #3498db;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
 
-.popup-content button:hover {
-    background: #1a73e8;
-}
+        <div class="main-content">
+            <a id="back" href="#">Go back</a>
+            <div class="wrapper">
+                <form action=""></form>
 
-/* Error text */
-.error {
-    color: red;
-    height: 20px;
-    font-size: 14px;
-    margin-top: 5px;
-}
+                <div class="login-box">
+                    <h1>Login</h1>
+
+                    <div class="input-box">
+                        <input type="text" placeholder="Username">
+                        <i class='bx  bx-user'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Password">
+                        <i class="bx bx-lock"></i>
+                    </div>
+
+                    <div class="options">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a class="forgot-link">Forgot Password?</a>
+                        <div id="blurWrapper"></div>
+
+                        <!-- STEP 1: ENTER EMAIL/PHONE -->
+                        <div id="resetPopup" class="popup">
+                            <div class="popup-content slide-in">
+                                <span class="close-popup">&times;</span>
+                                <h2>Password Reset</h2>
+                                <p>Enter your email or phone number:</p>
+
+                                <input type="text" id="recoverInput" placeholder="Email or phone number">
+
+                                <p id="errorMessage" class="error"></p>
+
+                                <button id="sendCodeBtn">Send Recovery Code</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2: ENTER CODE -->
+                        <div id="codePopup" class="popup">
+                            <div class="popup-content slide-in">
+                                <span class="close-code-popup">&times;</span>
+                                <h2>Enter Recovery Code</h2>
+                                <p>A code has been sent to your email/phone.</p>
+
+                                <input type="text" id="codeInput" placeholder="Enter your code">
+
+                                <button id="verifyCodeBtn">Verify Code</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn">Login</button>
+
+                    <p class="registertext">Don’t have an account? <a href="sign up.html">Register</a></p>
+                </div>
+                </form>
+            </div>
+
+
+
+        </div>
+
+        <div class="slideshow-bar right">
+            <div id="slideshow-right">
+                <img src="superbad.jpg">
+                <img src="the_thing.jpg">
+                <img src="Fantastic_mr_fox.jpg">
+                <img src="dune.jpg">
+                <img src="dog_day_afternoon.jpg">
+                <img src="Chainsaw_Man_.jpg">
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script>
+
+
+
+
+
+
+        $(document).ready(function () {
+            function initSlideshow(slideshowId) {
+                const images = $(slideshowId + " img");
+                let index = 0;
+
+                images.hide().eq(index).show();
+
+                function slideImages() {
+                    const current = images.eq(index);
+                    index = (index + 1) % images.length;
+                    const next = images.eq(index);
+
+                    current.fadeOut(1000);
+                    next.fadeIn(1000);
+                }
+
+                // Start slideshow
+                let slideInterval = setInterval(slideImages, 4000);
+
+                // Pause on hover
+                $(slideshowId).hover(
+                    () => clearInterval(slideInterval),
+                    () => slideInterval = setInterval(slideImages, 4000)
+                );
+            }
+
+            initSlideshow("#slideshow-left");
+            initSlideshow("#slideshow-right");
+
+        });
+        const popup = document.getElementById("resetPopup");
+        const codePopup = document.getElementById("codePopup");
+        const blur = document.getElementById("blurWrapper");
+
+        const forgot = document.querySelector(".forgot-link");
+        const closeBtn = document.querySelector(".close-popup");
+        const closeCodeBtn = document.querySelector(".close-code-popup");
+        const sendCodeBtn = document.getElementById("sendCodeBtn");
+        const recoverInput = document.getElementById("recoverInput");
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Open first popup
+        forgot.onclick = () => {
+            popup.style.display = "flex";
+            blur.classList.add("active");
+        };
+
+        // Close first popup
+        closeBtn.onclick = () => {
+            popup.style.display = "none";
+            blur.classList.remove("active");
+        };
+
+        // Close second popup
+        closeCodeBtn.onclick = () => {
+            codePopup.style.display = "none";
+            blur.classList.remove("active");
+        };
+
+        // Click outside to close
+        window.onclick = (e) => {
+            if (e.target === popup) {
+                popup.style.display = "none";
+                blur.classList.remove("active");
+            }
+            if (e.target === codePopup) {
+                codePopup.style.display = "none";
+                blur.classList.remove("active");
+            }
+        };
+
+        // Simple email/phone validation
+        function isValid(input) {
+            const emailRegex = /\S+@\S+\.\S+/;
+            const phoneRegex = /^[0-9]{7,15}$/;
+
+            return emailRegex.test(input) || phoneRegex.test(input);
+        }
+
+        // Step 1 → Send code
+        sendCodeBtn.onclick = () => {
+            const value = recoverInput.value.trim();
+
+            if (!isValid(value)) {
+                errorMessage.textContent = "Enter a valid email or phone number.";
+                return;
+            }
+
+            errorMessage.textContent = "";
+
+            // Simulate sending code (fake 1s delay)
+            sendCodeBtn.textContent = "Sending...";
+            sendCodeBtn.disabled = true;
+
+            setTimeout(() => {
+                sendCodeBtn.textContent = "Send Recovery Code";
+                sendCodeBtn.disabled = false;
+
+                popup.style.display = "none";
+                codePopup.style.display = "flex";
+            }, 1000);
+        };
+
+        // Step 2 → Verify code
+        document.getElementById("verifyCodeBtn").onclick = () => {
+            const code = document.getElementById("codeInput").value.trim();
+
+            if (code.length < 4) {
+                alert("Invalid code.");
+                return;
+            }
+
+            alert("Code accepted! Continue to reset your password.");
+            codePopup.style.display = "none";
+            blur.classList.remove("active");
+        };
+
+
+    </script>
+
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <h5 class="footer-title">Absolute Cinema Fans</h5>
+                    <p class="footer-text">A community-driven film review platform. Discover, review, and share your
+                        favourite movies.</p>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <h6 class="footer-heading">Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Home</a></li>
+                        <li><a href="#" class="footer-link">My Reviews</a></li>
+                        <li><a href="#" class="footer-link">Browse</a></li>
+                        <li><a href="#" class="footer-link">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center pt-1">
+                <small>© 2025 Absolute Cinema Fans — College project</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="javascript/coverflow.js"></script>
+</body>
+
+</html>
