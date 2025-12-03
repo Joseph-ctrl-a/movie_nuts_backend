@@ -112,4 +112,12 @@ document.addEventListener("click", (e) => {
     clearResults();
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const writeBtn = document.getElementById("nav-write-review");
 
+  if (writeBtn) {
+    writeBtn.addEventListener("click", () => {
+      window.location.href = "write_blog.html";
+    });
+  }
+});
