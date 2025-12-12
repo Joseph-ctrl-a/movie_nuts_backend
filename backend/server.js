@@ -36,8 +36,17 @@ const startApp = async () => {
     process.exit(1);
   }
 };
+const moviesRoute = require("./routes/movies");
+app.use("/api/movies", moviesRoute);
+app.use("/api/users", require("./routes/users"));
+const blogRoutes = require("./routes/blogs");
 
+app.use("/api/blogs", blogRoutes);
 startApp();
+
+
+
+
 
 
 
