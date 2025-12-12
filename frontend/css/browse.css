@@ -1,0 +1,169 @@
+/* ---------------------------------------------------------
+   PAGE LAYOUT
+--------------------------------------------------------- */
+.browse-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 1rem;
+  color: #763a16ff;
+}
+
+.browse-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------------------------------------------------------
+   TOP CONTROLS
+--------------------------------------------------------- */
+.browse-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#sort-toggle {
+  background: #763a16ff;
+  color: #feede6ff;
+  border: 1px solid #c7a08d;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#sort-toggle:hover {
+  background: #c6bda8;
+  color: #763a16ff;
+}
+
+.page-buttons button {
+  padding: 7px 15px;
+  border: 1px solid #c7a08d;
+  background: #763a16ff;
+  color: #feede6ff;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.page-buttons button:hover:not(:disabled) {
+  background: #c6bda8;
+  color: #763a16ff;
+}
+
+#page-info {
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   FILM GRID
+--------------------------------------------------------- */
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+/* Entire poster box wrapper */
+.poster-box {
+  width: 100%;
+  aspect-ratio: 2 / 3; /* Ensures exact same proportional space */
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fbeee7;
+  border: 3px solid #f2e4d9;   /* <-- BORDER ALWAYS APPEARS HERE */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.18),
+    0 0 16px rgba(0,0,0,0.08);
+}
+
+/* Poster image inside poster-box */
+.poster-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder content */
+.poster-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: #763a16ff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 10px;
+  line-height: 1.4;
+
+  /* Prevent placeholder from shrinking weirdly */
+  background: #fbeee7;
+}
+/* Grow poster slightly on hover */
+.film-item {
+    transition: transform 0.15s ease-in-out;
+}
+
+.film-item:hover {
+    transform: scale(1.04); /* Subtle 4% grow */
+}
+
+/* Movie title */
+.film-title {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   PAGE JUMP
+--------------------------------------------------------- */
+.page-jump {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+#page-input {
+  width: 80px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #c7a08d;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#page-go {
+  padding: 6px 12px;
+  background: #763a16ff;
+  color: #feede6ff;
+  border: 1px solid #c7a08d;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+#page-go:hover {
+  background: #c6bda8;
+  color: #763a16ff;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #763a16ff;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
