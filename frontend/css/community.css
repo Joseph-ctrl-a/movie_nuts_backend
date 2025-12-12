@@ -1,0 +1,154 @@
+/* ================================
+   COMMUNITY PAGE (MATCHES BROWSE)
+   ================================ */
+
+.browse-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 1rem;
+    text-align: center;
+    color: #763a16;
+}
+
+.browse-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #763a16;
+    margin-bottom: 1.8rem;
+}
+
+/* ---------- SEARCH BAR ---------- */
+.community-search {
+    width: 360px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #c7a08d;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.community-search:focus {
+    outline: none;
+    border-color: #763a16;
+}
+
+/* ---------- USER GRID ---------- */
+.film-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    justify-items: center;
+}
+
+/* ---------- USER CARD ---------- */
+.user-card {
+    text-align: center;
+    transition: transform 0.15s ease-in-out;
+}
+
+.user-card:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- PROFILE RING ---------- */
+.user-ring {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #feede6;
+    border: 4px solid #c7a08d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.18),
+        0 0 16px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.user-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-placeholder {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #763a16;
+    line-height: 1.3;
+}
+
+.username {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #763a16;
+}
+
+/* ---------- PAGINATION ---------- */
+.community-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.2rem;
+}
+
+.community-pagination button {
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: 1px solid #c7a08d;
+    background: #763a16;
+    color: #feede6;
+    font-weight: 600;
+}
+
+.community-pagination button:hover:not(:disabled) {
+    background: #c6bda8;
+    color: #763a16;
+}
+
+#page-display {
+    font-weight: 700;
+    color: #4a3928;
+}
+
+/* ---------- GO TO PAGE ---------- */
+.page-jump {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    color: #763a16;
+}
+
+#page-input {
+    width: 80px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #c7a08d;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#page-input:focus {
+    outline: none;
+    border-color: #763a16;
+}
+
+#page-go {
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 1px solid #c7a08d;
+    background: #763a16;
+    color: #feede6;
+    font-weight: 600;
+}
+
+#page-go:hover {
+    background: #c6bda8;
+    color: #763a16;
+}
