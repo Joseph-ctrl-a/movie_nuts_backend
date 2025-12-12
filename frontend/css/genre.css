@@ -1,0 +1,37 @@
+.genre-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 1rem;
+  color: #763a16ff;
+}
+
+.genre-container h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.genre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.genre-item {
+  background: #feede6ff;
+  border: 2px solid #c7a08d;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #763a16ff;
+  transition: 0.2s ease-in-out;
+}
+
+.genre-item:hover {
+  background: #c6bda8;
+  color: #763a16ff;
+  transform: translateY(-3px);
+}
