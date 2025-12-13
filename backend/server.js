@@ -43,12 +43,9 @@ const blogRoutes = require("./routes/blogs");
 
 app.use("/api/blogs", blogRoutes);
 
-const blogRoutes = require("./routes/blogs");
-app.use("/api/blogs", blogRoutes);
 
 
 startApp();
-
 
 
 
