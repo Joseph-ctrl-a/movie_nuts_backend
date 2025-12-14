@@ -1,38 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     background: #f4f4f4;
-    display: flex;
     min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 80px;
+}
+
+/* =========================
+   MAIN SECTIONS
+   ========================= */
+
+.left,
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 80px;
-    /* adjust how far from left edge */
     background: #fff;
+    padding: 60px;
 }
-
-
-.di {
-    color: #fff;
-    width: 2px;
-    background: grey;
-    height: 70px;
-    align-self: center;
-    position: relative;
-    left: 150px;
-
-}
-
 
 .right {
-    flex: 1;
     background: #f4f4f4;
+    padding: 60px;
+}
+
+/* =========================
+   LOGIN CONTENT
+   ========================= */
+
+.login-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sub-text {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 14px;
+}
+
+.sub-text a {
+    color: #4a2a16;
+    text-decoration: none;
+}
+
+.sub-text a:hover {
+    text-decoration: underline;
 }
 
 h2 {
@@ -41,10 +68,15 @@ h2 {
     font-size: 28px;
 }
 
+/* =========================
+   INPUTS
+   ========================= */
+
 .input-group {
     position: relative;
     margin-bottom: 30px;
-    width: 280px;
+    width: 100%;
+    max-width: 320px;
 }
 
 .input-group input {
@@ -79,8 +111,21 @@ h2 {
     color: #4a2a16;
 }
 
+i {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* =========================
+   BUTTON
+   ========================= */
+
 button {
-    width: 280px;
+    width: 100%;
+    max-width: 320px;
     padding: 12px;
     border: none;
     border-radius: 4px;
@@ -96,49 +141,16 @@ button {
 button:hover {
     background-color: #333;
     color: #c6bda8;
-
 }
 
-.login-title {
-    text-align: center;
-    margin: 0 0 10px;
-}
+/* =========================
+   NAVBAR
+   ========================= */
 
-.sub-text {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #555;
-    font-size: 14px;
-}
-
-.sub-text a {
-    color: #4a2a16;
-    text-decoration: none;
-}
-
-.sub-text a:hover {
-    text-decoration: underline;
-}
-
-
-
-
-
-i {
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-
-}
-
-
-/*nav*/
 .navbar-custom {
     background-color: white;
-
     min-height: 70px;
+    padding: 0 30px;
 }
 
 .navbar-custom .nav-link,
@@ -183,7 +195,7 @@ i {
     border-radius: 50%;
     border: 1px solid var(--color-border);
     object-fit: cover;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
 }
 
 .profile-btn {
@@ -195,10 +207,9 @@ i {
     align-items: center;
 }
 
-
-/* ---------------- */
-/* Footer Component */
-/* ---------------- */
+/* =========================
+   FOOTER
+   ========================= */
 
 .footer-custom {
     background-color: white;
@@ -224,4 +235,29 @@ i {
     margin-top: 0.25rem;
     padding-top: 0.05rem;
     font-size: 0.85rem;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINT
+   ========================= */
+
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .navbar-custom {
+        padding: 10px 15px;
+    }
+
+    .footer-custom {
+        text-align: center;
+    }
 }
